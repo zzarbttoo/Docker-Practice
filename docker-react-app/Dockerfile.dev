@@ -1,12 +1,12 @@
-FROM node:10
+FROM node:alpine
 
 WORKDIR /usr/src/app
 
 COPY package.json ./
 
-COPY ./ ./
-
 RUN npm install
 
-CMD ["node", "server.js"]
+COPY ./ ./ 
+
+CMD ["npm", "run", "start"]
 
