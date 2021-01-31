@@ -6,7 +6,7 @@ os: linux
 language : generic
 
 #route build to ubuntu xenial 
-dist: xenial 
+dist: focal
 
 services:
   - docker
