@@ -1,6 +1,12 @@
-sudo: required
+#관리자 권한 찾기 
+#sudo: required
+
+os: linux 
 
 language : generic
+
+#route build to ubuntu xenial 
+dist: xenial 
 
 services:
   - docker
