@@ -1,11 +1,13 @@
+CMD ["echo" , "dockerfile start"]
+
 FROM node:alpine as builder
 WORKDIR /usr/src/app
-COPY home/zzarbttoo/Docker-Practice/docker-react-app/package.json ./
+COPY package.json .
 RUN npm install
-COPY home/zzarbttoo/Docker-Practice/docker-react-app/ ./
+COPY . .
 RUN npm run build 
 
 FROM nginx 
 EXPOSE 80 
-COPY --from=builder /usr/src/app/build /usr/share/nginx/html
+COPY --from=builder ./build /usr/share/nginx/html
 

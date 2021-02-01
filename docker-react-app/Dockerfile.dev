@@ -1,12 +1,17 @@
+CMD ["echo", "dockerfile.dev run"]
+
 FROM node:alpine
 
 WORKDIR /usr/src/app
 
 COPY package.json ./
 
+CMD ["cat" , "package.json"]
+
 RUN npm install
 
 COPY ./ ./ 
+
 
 CMD ["npm", "run", "start"]
 
